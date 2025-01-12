@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: coursegen-deployment
+spec:
+  selector:
+    matchLabels:
+      app: coursegen
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: coursegen
+    spec:
+      containers:
+      - name: coursegen
+        image: reinoutw/han-coursegenerator:1.0.0
+        ports:
+        - containerPort: 8080
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: coursegen-nodeport-service
+spec:
+  type: NodePort
+  selector:
+    app: coursegen
+  ports:
+    - port: 8080
+      targetPort: 8080
+      nodePort: 30008

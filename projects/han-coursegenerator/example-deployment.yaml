@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: myapp
-        image: reinoutw/blazor-demo:latest
+        image: reinoutw/blazor-demo:1.10.0
         ports:
         - containerPort: 8080
 ---

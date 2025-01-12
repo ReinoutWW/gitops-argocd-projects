@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: coursegen
-        image: reinoutw/han-coursegenerator:1.0.0
+        image: reinoutw/han-coursegenerator-teacher-portal:1.0.0
         ports:
         - containerPort: 8080
 ---

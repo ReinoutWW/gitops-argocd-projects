@@ -7,7 +7,7 @@ spec:
   project: default
 
   source: 
-    repoUrl: https://github.com/ReinoutWW/gitops-argocd-projects
+    repoURL: https://github.com/ReinoutWW/gitops-argocd-projects
     targetRevision: HEAD
     path: projects/han-coursegenerator
   destination:

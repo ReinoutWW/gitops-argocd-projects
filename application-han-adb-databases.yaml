@@ -1,0 +1,23 @@
+apiVersion: argoproj.io/v1alpha1
+kind: Application
+metadata:
+  name: han-databases
+  namespace: argocd
+spec:
+  project: default
+
+  source: 
+    repoURL: https://github.com/ReinoutWW/gitops-argocd-projects
+    targetRevision: HEAD
+    path: projects/han-databases
+  destination:
+    server: https://kubernetes.default.svc
+    namespace: han-databases
+
+  syncPolicy:
+    syncOptions:
+    - CreateNamespace=true
+
+    automated:
+      selfHeal: true
+      prune: true

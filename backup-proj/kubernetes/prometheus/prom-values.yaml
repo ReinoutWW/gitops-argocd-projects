@@ -1,0 +1,11 @@
+server:
+  persistentVolume:
+    enabled: true
+    storageClass: nfs-csi
+    size: 8Gi
+
+alertmanager:
+  persistence:
+    enabled: true
+    storageClass: nfs-csi
+    size: 2Gi
